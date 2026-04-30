@@ -9,4 +9,6 @@ Analysis Performed:
 A small number of stores generate the majority of revenue 
 Certain states and locations consistently outperform others
 Recommendation- Focus sales efforts on improving lower performing stores while analyzing and replicating strategies from top-performing locations. Additionally, product categories to maximize revenue growth in the next quarter.
-Recording-20260430_184913.webm
+[Click here to open the video](https://yearuptemp-my.sharepoint.com/:v:/g/personal/saraya_my_yearupunited_org/IQDAfjLg0G8ZRbV8BZJ-ybltAfKo0stuNMzcW79FXBtqeJA?e=JhjBzH&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+
+
