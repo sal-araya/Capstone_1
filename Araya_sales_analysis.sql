@@ -16,7 +16,7 @@ FROM (
            MAX(ss.Transaction_Date) AS end_date
     FROM store_sales ss
     JOIN store_locations sl ON ss.Store_ID = sl.StoreId
-    WHERE sl.State IN ('Massachusetts', 'Maine', 'Maryland', 'New Jersey')
+    WHERE sl.State IN ('Maine')
 
     UNION ALL
 
@@ -24,7 +24,7 @@ FROM (
            MIN(os.Date),
            MAX(os.Date)
     FROM online_sales os
-    WHERE os.ShiptoState IN ('Massachusetts', 'Maine', 'Maryland', 'New Jersey')
+    WHERE os.ShiptoState IN ('Maine')
 ) AS northeast_sales;
 
 -- 2. Monthly revenue breakdown
@@ -36,7 +36,7 @@ FROM (
            SUM(ss.Sale_Amount) AS total_revenue
     FROM store_sales ss
     JOIN store_locations sl ON ss.Store_ID = sl.StoreId
-    WHERE sl.State IN ('Massachusetts', 'Maine', 'Maryland', 'New Jersey')
+    WHERE sl.State IN ('Maine')
     GROUP BY sales_month
 
     UNION ALL
@@ -44,7 +44,7 @@ FROM (
     SELECT DATE_FORMAT(os.Date, '%Y-%m') AS sales_month,
            SUM(os.SalesTotal) AS total_revenue
     FROM online_sales os
-    WHERE os.ShiptoState IN ('Massachusetts', 'Maine', 'Maryland', 'New Jersey')
+    WHERE os.ShiptoState IN ('Maine')
     GROUP BY sales_month
 ) AS monthly
 GROUP BY sales_month
@@ -60,16 +60,15 @@ FROM (
     FROM store_sales ss
     JOIN store_locations sl 
         ON ss.Store_ID = sl.StoreId
-    WHERE sl.State IN (
-        'Massachusetts','Maine','Maryland','New Jersey'
-    )
+    WHERE sl.State IN ('Maine')
+
 
     UNION
 
     SELECT os.SalesTotal AS total_revenue
     FROM online_sales os
-    WHERE os.ShiptoState IN (
-        'Massachusetts','Maine','Maryland','New Jersey'
+    WHERE os.ShiptoState IN ('Maine'
+    
     )
 ) AS northeast
 
@@ -95,14 +94,14 @@ FROM (
            ss.Sale_Amount AS transaction_amount
     FROM store_sales ss
     JOIN store_locations sl ON ss.Store_ID = sl.StoreId
-    WHERE sl.State IN ('Massachusetts', 'Maine', 'Maryland', 'New Jersey')
+    WHERE sl.State IN ('Maine')
 
     UNION ALL
 
     SELECT DATE_FORMAT(os.Date, '%Y-%m') AS sales_month,
            os.SalesTotal AS transaction_amount
     FROM online_sales os
-    WHERE os.ShiptoState IN ('Massachusetts', 'Maine', 'Maryland', 'New Jersey')
+    WHERE os.ShiptoState IN ('Maine')
 ) AS transactions
 GROUP BY sales_month
 ORDER BY sales_month;
@@ -116,7 +115,7 @@ SELECT
 FROM store_sales ss
 JOIN store_locations sl
    ON ss.Store_ID = sl.StoreId
-WHERE sl.State IN ('Massachusetts', 'Maine', 'Maryland', 'New Jersey')
+WHERE sl.State IN ('Maine')
 GROUP BY sl.StoreLocation, sl.State
 ORDER BY store_rank;
 
