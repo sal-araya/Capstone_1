@@ -16,7 +16,7 @@ FROM (
            MAX(ss.Transaction_Date) AS end_date
     FROM store_sales ss
     JOIN store_locations sl ON ss.Store_ID = sl.StoreId
-    WHERE sl.State IN ('Maine')
+    WHERE sl.State IN ('Massachusetts', 'Maine', 'Maryland', 'New Jersey')
 
     UNION ALL
 
